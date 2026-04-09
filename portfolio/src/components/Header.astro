@@ -1,0 +1,21 @@
+---
+// File: portfolio/src/components/Header.astro
+import { personal } from '@/data/cvData';
+---
+<header class="flex flex-col md:flex-row items-center gap-6 mb-12 pb-6 border-b border-golden-200">
+  <img src="/profile-placeholder.svg" alt="Profile" class="w-32 h-32 rounded-full object-cover border-4 border-primary shadow-lg" />
+  <div class="text-center md:text-left">
+    <h1 class="text-4xl md:text-5xl font-serif font-bold text-dark">{personal.name}</h1>
+    <p class="text-xl text-primary mt-1">{personal.tagline}</p>
+    <div class="flex flex-wrap gap-4 justify-center md:justify-start mt-4 text-sm text-light">
+      <span class="flex items-center gap-1">📧 {personal.email}</span>
+      <span class="flex items-center gap-1">📞 {personal.phone}</span>
+      <span class="flex items-center gap-1">📍 {personal.location}</span>
+    </div>
+    <div class="flex flex-wrap gap-3 justify-center md:justify-start mt-3">
+      <a href={`https://linkedin.com/in/${personal.linkedin}`} target="_blank" class="text-primary hover:underline">LinkedIn</a>
+      <a href={`https://github.com/${personal.github}`} target="_blank" class="text-primary hover:underline">GitHub</a>
+      <a href={`https://orcid.org/${personal.orcid}`} target="_blank" class="text-primary hover:underline">ORCID</a>
+    </div>
+  </div>
+</header>
